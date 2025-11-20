@@ -1,0 +1,19 @@
+# Credentials and sensitive configuration
+.env
+*.env
+
+# Generated reports
+reports/
+*.txt
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+
+# Temporary files
+*.bak
+
+
