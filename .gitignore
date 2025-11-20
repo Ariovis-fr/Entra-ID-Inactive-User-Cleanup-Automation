@@ -1,0 +1,40 @@
+# Credentials et configuration sensible
+.env
+*.env
+
+# Rapports générés
+reports/
+*.txt
+UTILISATEURS_INACTIFS_*.txt
+
+# Logs
+logs/
+*.log
+
+# Tests
+TestResults.xml
+coverage/
+
+# PowerShell
+*.ps1xml
+
+# Base de données locale
+*.mdf
+*.ldf
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Temporaires
+*.tmp
+*.bak
+*.swp
+~*
