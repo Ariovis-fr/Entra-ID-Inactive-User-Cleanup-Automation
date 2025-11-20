@@ -1,6 +1,5 @@
 # ========================================
-# Entra ID (Azure AD) Provider
-# Handles Entra ID queries via Microsoft Graph
+# Entra ID Provider
 # ========================================
 
 function Get-InactiveEntraIdUsers {
@@ -10,8 +9,8 @@ function Get-InactiveEntraIdUsers {
     PARAMETER
         InactiveDays : Number of days of inactivity (default: 75)
         TenantId : Azure tenant ID
-        ClientId : Azure application ID
-        ClientSecret : Application client secret
+        Clien ID
+        ClientSecret : Application clitId : Azure applicationent secret
     #>
 
     [CmdletBinding()]

@@ -1,5 +1,5 @@
 # ========================================
-# Main Entry Point (Orchestration)
+# Entry Point
 # ========================================
 
 [CmdletBinding()]

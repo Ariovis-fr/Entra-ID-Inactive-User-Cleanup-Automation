@@ -1,6 +1,5 @@
 # ========================================
 # Report Service
-# Text, CSV, HTML report generation
 # ========================================
 
 function Export-InactiveUsersReport {

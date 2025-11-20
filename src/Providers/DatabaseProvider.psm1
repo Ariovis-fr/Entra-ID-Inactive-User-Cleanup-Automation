@@ -1,6 +1,5 @@
 # ========================================
 # Database Provider
-# Handles SQL Server operations
 # ========================================
 
 function Save-ADUsersToDatabase {

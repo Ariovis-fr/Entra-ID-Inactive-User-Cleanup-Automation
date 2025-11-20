@@ -1,6 +1,5 @@
 # ========================================
 # Active Directory Provider
-# Handles Active Directory queries
 # ========================================
 
 function Get-InactiveADUsers {
@@ -12,7 +11,7 @@ function Get-InactiveADUsers {
     Queries Active Directory to get users inactive for X days
 
     .PARAMETER InactiveDays
-    Number of days of inactivity (default: 75)
+    Number of days of inactivity
 
     .PARAMETER Server
     AD server to query
@@ -116,15 +115,6 @@ function Get-ADUserLastLogonDate {
     # LastLogonDate is more reliable (replicated)
     if ($User.LastLogonDate) {
         return $User.LastLogonDate
-    }
-
-    # Fallback to LastLogon (local to DC)
-    if ($User.LastLogon -and $User.LastLogon -gt 0) {
-        try {
-            return [DateTime]::FromFileTime($User.LastLogon)
-        } catch {
-            return $null
-        }
     }
 
     return $null

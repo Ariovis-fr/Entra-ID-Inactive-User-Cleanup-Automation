@@ -8,7 +8,7 @@ Write-Host "DATABASE INITIALIZATION" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 
 # Load environment variables from .env
-$envFile = "$PSScriptRoot\.env"
+$envFile = "$PSScriptRoot\config\.env"
 
 if (-not (Test-Path $envFile)) {
     Write-Host "[ERROR] .env file not found: $envFile" -ForegroundColor Red

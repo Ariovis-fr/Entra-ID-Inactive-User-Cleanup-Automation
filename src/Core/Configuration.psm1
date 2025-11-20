@@ -5,7 +5,7 @@
 
 function Get-AppConfiguration {
 
-    # Loads parameters from .env (credentials) and settings.psd1 (application config)
+    # Loads parameters from .env and settings.psd1
 
     [CmdletBinding()]
     param(
