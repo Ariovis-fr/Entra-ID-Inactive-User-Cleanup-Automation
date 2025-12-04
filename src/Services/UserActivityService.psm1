@@ -122,6 +122,11 @@ function Merge-UserActivityData {
     $adDate = $ADUser.LastLogon
     $entraDate = $EntraUser.LastSignIn
 
+    # Debug logs to see retrieved dates
+    Write-Verbose "=== Merge-UserActivityData : $($ADUser.SamAccountName) ==="
+    Write-Verbose "  AD Date        : $adDate"
+    Write-Verbose "  Entra Date     : $entraDate"
+
     # Determine most recent date
     $lastActivityDate = $null
     $lastActivitySource = ""
@@ -130,16 +135,20 @@ function Merge-UserActivityData {
         if ($adDate -gt $entraDate) {
             $lastActivityDate = $adDate
             $lastActivitySource = "Active Directory"
+            Write-Verbose "  → Selected: AD is more recent"
         } else {
             $lastActivityDate = $entraDate
             $lastActivitySource = "Entra ID"
+            Write-Verbose "  → Selected: Entra ID is more recent (or equal)"
         }
     } elseif ($adDate) {
         $lastActivityDate = $adDate
         $lastActivitySource = "Active Directory"
+        Write-Verbose "  → Selected: AD only (Entra is null)"
     } elseif ($entraDate) {
         $lastActivityDate = $entraDate
         $lastActivitySource = "Entra ID"
+        Write-Verbose "  → Selected: Entra only (AD is null)"
     }
 
     # Calculate days since activity
@@ -148,6 +157,10 @@ function Merge-UserActivityData {
     } else {
         $null
     }
+
+    Write-Verbose "  Final activity date        : $lastActivityDate"
+    Write-Verbose "  Days since activity        : $daysSinceActivity"
+    Write-Verbose "=== End Merge ==="
 
     return [PSCustomObject]@{
         SamAccountName      = $ADUser.SamAccountName
