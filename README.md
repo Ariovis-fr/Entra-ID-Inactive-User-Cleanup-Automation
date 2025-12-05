@@ -190,5 +190,5 @@ The report includes only users who are inactive in **both systems**, with detail
 
 ---
 
-**Maintained by**: Ariovis-fr  
+**Maintained by**: [Ariovis-fr](https://www.ariovis.fr/)
 **Repository**: [EntraID Inactive User Cleanup Automation](https://github.com/Ariovis-fr/Entra-ID-Inactive-User-Cleanup-Automation)
